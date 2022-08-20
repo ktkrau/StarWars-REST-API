@@ -12,15 +12,15 @@ class User(db.Model):
     ships = db.relationship('Ship', secondary='favorites_ships', backref='users')
 
     def save(self):
-        db.session.add(self)  # INSERT
-        db.session.commit()  # Guarda el INSERT
+        db.session.add(self) 
+        db.session.commit()
 
     def update(self):
-        db.session.commit()  # Guarda el UPDATE
+        db.session.commit()
 
     def delete(self):
-        db.session.delete(self)  # DELETE
-        db.session.commit()  # Guarda el DELETE
+        db.session.delete(self)
+        db.session.commit()
 
     def get_people(self):
         return list(map(lambda person: person.to_dict(), self.people))
@@ -51,15 +51,15 @@ class Person(db.Model):
     gender = db.Column(db.String(250))
 
     def save(self):
-        db.session.add(self)  # INSERT
-        db.session.commit()  # Guarda el INSERT
+        db.session.add(self)
+        db.session.commit()
 
     def update(self):
-        db.session.commit()  # Guarda el UPDATE
+        db.session.commit()
 
     def delete(self):
-        db.session.delete(self)  # DELETE
-        db.session.commit()  # Guarda el DELETE
+        db.session.delete(self) 
+        db.session.commit()
 
     def to_dict(self):
         return {
@@ -89,15 +89,15 @@ class Planet(db.Model):
     
 
     def save(self):
-        db.session.add(self)  # INSERT
-        db.session.commit()  # Guarda el INSERT
+        db.session.add(self)
+        db.session.commit()
 
     def update(self):
-        db.session.commit()  # Guarda el UPDATE
+        db.session.commit()
 
     def delete(self):
-        db.session.delete(self)  # DELETE
-        db.session.commit()  # Guarda el DELETE
+        db.session.delete(self)
+        db.session.commit()
 
     def to_dict(self):
         return {
@@ -132,15 +132,15 @@ class Ship(db.Model):
     
 
     def save(self):
-        db.session.add(self)  # INSERT
-        db.session.commit()  # Guarda el INSERT
+        db.session.add(self) 
+        db.session.commit()
 
     def update(self):
-        db.session.commit()  # Guarda el UPDATE
+        db.session.commit()
 
     def delete(self):
-        db.session.delete(self)  # DELETE
-        db.session.commit()  # Guarda el DELETE
+        db.session.delete(self)
+        db.session.commit()
 
     def to_dict(self):
         return {
@@ -167,15 +167,15 @@ class FavoritePerson(db.Model):
     person_id = db.Column(db.Integer, db.ForeignKey('people.id'))
 
     def save(self):
-        db.session.add(self)  # INSERT
-        db.session.commit()  # Guarda el INSERT
+        db.session.add(self)
+        db.session.commit()
 
     def update(self):
-        db.session.commit()  # Guarda el UPDATE
+        db.session.commit()
 
     def delete(self):
-        db.session.delete(self)  # DELETE
-        db.session.commit()  # Guarda el DELETE
+        db.session.delete(self)
+        db.session.commit()
 
     def to_dict(self):
         return {
@@ -191,15 +191,15 @@ class FavoritePlanet(db.Model):
     planet_id = db.Column(db.Integer, db.ForeignKey('planets.id'))
 
     def save(self):
-        db.session.add(self)  # INSERT
-        db.session.commit()  # Guarda el INSERT
+        db.session.add(self)
+        db.session.commit()
 
     def update(self):
-        db.session.commit()  # Guarda el UPDATE
+        db.session.commit()
 
     def delete(self):
-        db.session.delete(self)  # DELETE
-        db.session.commit()  # Guarda el DELETE
+        db.session.delete(self)
+        db.session.commit()
 
     def to_dict(self):
         return {
@@ -215,15 +215,15 @@ class FavoriteShip(db.Model):
     ship_id = db.Column(db.Integer, db.ForeignKey('ships.id'))
 
     def save(self):
-        db.session.add(self)  # INSERT
-        db.session.commit()  # Guarda el INSERT
+        db.session.add(self)
+        db.session.commit()
 
     def update(self):
-        db.session.commit()  # Guarda el UPDATE
+        db.session.commit()
 
     def delete(self):
-        db.session.delete(self)  # DELETE
-        db.session.commit()  # Guarda el DELETE
+        db.session.delete(self)
+        db.session.commit()
 
     def to_dict(self):
         return {
